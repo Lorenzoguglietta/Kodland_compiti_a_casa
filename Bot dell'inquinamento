@@ -1,0 +1,62 @@
+import discord
+from discord.ext import commands
+
+intents = discord.Intents.default()
+intents.message_content = True
+
+bot = commands.Bot(command_prefix='$', intents=intents)
+
+@bot.event
+async def on_ready():
+    print(f'Hai fatto l\'accesso come {bot.user}')
+@bot.command()
+async def inquinamento_negozio(ctx):
+    risposta = ("Non comprare troppe cose di plastica!(la regola d'oro);   "
+    " Compra solo cose che ti servono;  "
+    "Non prendere cose inutili che consumano troppa energia."
+    "")
+    await ctx.send(risposta)    
+
+@bot.command()
+async def inquinamento_casa(ctx):
+    risposta = ("Fai la differenziata siccome è la regola d'oro, anzi di platino(pensa a quelle povere persone che lavorano per te che butti la plastica nella carta e loro devono ritrovarle in mezzo a tutta l'immondizia :( );   "
+    "Non consumare energia, acqua... quando non è necessario(vai a spegnere la PS e togli dalla carica la Nintendo. Il lavandino è leggermente aperto = chiudilo!!!).  "
+    " ")
+    await ctx.send(risposta)    
+
+@bot.command()
+async def inquinamento_scuola(ctx):
+    risposta = (
+        "Usa una borraccia riutilizzabile invece delle bottigliette di plastica monouso;    "
+        "Scrivi su entrambi i lati dei fogli del quaderno per non sprecare carta;    "
+        "Se puoi, vai a scuola a piedi, in bici o con i mezzi pubblici insieme ai tuoi amici!"
+    )
+    await ctx.send(risposta)
+
+@bot.command()
+async def inquinamento_tecnologia(ctx):
+    risposta = (
+        "Svuota la tua casella email! Sapevi che conservare migliaia di mail vecchie e inutili consuma energia nei server di tutto il mondo?   "
+        "Non cambiare telefono o console ogni anno solo perché esce il modello nuovo. Fai durare i tuoi dispositivi il più a lungo possibile;   "
+        "Scollega i caricatori dalla presa quando la batteria è al 100%. Continuano a consumare energia a vuoto!"
+    )
+    await ctx.send(risposta)
+
+@bot.command()
+async def inquinamento_AI(ctx):
+    risposta = (
+        "Non fare domande inutili o insensate come 'dove si trova adesso la mia ex-fidanzata?';    "
+        "Non fare un messaggio con scritto solo 'grazie' perchè dovrà consumare piu' acqua per raffreddare i server. Ma lo puoi scrivere dentro al messaggio principale;   "
+        "Evita di far generare immagini inutilmente "
+    )
+    await ctx.send(risposta)
+
+bot.run("Token")
+ 
+
+
+
+
+
+ 
+
